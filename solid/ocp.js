@@ -4,6 +4,26 @@
  *
  */
 
+//can create a base class Specification and then others can inheit from it
+class Specification {
+  constructor() {
+    if (this.constructor.name === "Specification") {
+      throw new Error("Specification is abstract!");
+    }
+  }
+  isSatisfied(item) {}
+}
+
+class AnotherSpecification extends Specification {
+  constructor(color) {
+    super();
+    this.color = color;
+  }
+  isSatisfied(item) {
+    console.log("ok");
+  }
+}
+
 //frozen objects -> Enums
 let Color = Object.freeze({
   red: "red",
@@ -100,7 +120,6 @@ class AndSpecification {
   }
 }
 //..can similarly make or specification,xor specification etc.
-
 
 console.log(`Large and green products`);
 let spec = new AndSpecification(
