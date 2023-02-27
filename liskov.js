@@ -52,8 +52,25 @@ class Square extends Rectangle {
   }
 }
 
+let useIt = function (rc) {
+  let width = rc._width;
+  rc.height = 10;// as soon as height is set, the width is set as well.
+  //the area of the rectangle is 10*width
+  console.log(`Expected area of ${10 * width} , got ${rc.area}`);
+};
+
 let rc = new Rectangle(2, 3);
-console.log(rc.toString());
+//console.log(rc.toString());
+useIt(rc);
 
 let sq = new Square(5);
-console.log(sq.toString());
+//console.log(sq.toString());
+useIt(sq);
+
+//LSP states that if you take a base class and implement things, it should be 
+// able to take a derived class like Square wihtou breaking functionality in any way whatsoever.
+
+//get rid of the Square class and get check in the rectangle class itself.
+
+
+
