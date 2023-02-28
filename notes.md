@@ -5,7 +5,7 @@
         - Liskov Substituion Principle
         - Interface Segregation Principle
         - Dependency Inversion Principle
-    2. Creational Desing Patterns:
+    2. Creational Design Patterns:
         - Builder
         - Factories(Factory Method and Abstract Factory)
         - Prototype
