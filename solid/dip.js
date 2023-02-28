@@ -19,7 +19,7 @@ class Person {
 //low level module --> like a interface that allows us to browse throught the data
 class RelationshipBrowser {
   constructor() {
-    if (this.contructor.name === "RelationshipBrowser") {
+    if (this.constructor.name === "RelationshipBrowser") {
       throw new Error("RelationshipBrowser is abstract!");
     }
   }
@@ -66,7 +66,9 @@ class Research {
   //   }
 
   constructor(browser) {
-    
+    for (let p of browser.findAllChildrenOf("John")) {
+      console.log(`John has a child called ${p.name}`);
+    }
   }
 }
 
